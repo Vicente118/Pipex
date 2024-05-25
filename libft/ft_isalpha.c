@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdarras <vdarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 18:26:41 by vdarras           #+#    #+#             */
-/*   Updated: 2024/05/26 00:14:52 by vdarras          ###   ########.fr       */
+/*   Created: 2024/04/02 16:27:32 by vdarras           #+#    #+#             */
+/*   Updated: 2024/04/02 16:31:27 by vdarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+// #include <stdio.h>
+#include "libft.h"
 
-int main(int argc, char **argv, char **envp)
+int	ft_isalpha(int c)
 {
-	int		fd[2];
-	pid_t	pid;
-	exec("", envp);
-	if (argc != 5)
-	{
-		write(2, "Error bad number of arguments.\n", 32);
-		return (0);
-	}
-	if (pipe(fd) == -1)
-		exit_error();
-	pid = fork();
-	if (pid == -1)
-		exit_error();
-	if (pid == 0)
-		child();
-	// if (waitpid(pid, NULL, 0) == -1)
-	// 	exit_error();
-    return 0;
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
 }
+/*
+int main(void)
+{
+	printf("%d", ft_isalpha(97));
+	return (0);
+}*/

@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdarras <vdarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 18:26:41 by vdarras           #+#    #+#             */
-/*   Updated: 2024/05/26 00:14:52 by vdarras          ###   ########.fr       */
+/*   Created: 2024/04/05 14:27:13 by vdarras           #+#    #+#             */
+/*   Updated: 2024/04/11 17:53:05 by vdarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "libft.h"
 
-int main(int argc, char **argv, char **envp)
+int	ft_lstsize(t_list *lst)
 {
-	int		fd[2];
-	pid_t	pid;
-	exec("", envp);
-	if (argc != 5)
-	{
-		write(2, "Error bad number of arguments.\n", 32);
+	int	i;
+
+	if (!lst)
 		return (0);
+	i = 0;
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
 	}
-	if (pipe(fd) == -1)
-		exit_error();
-	pid = fork();
-	if (pid == -1)
-		exit_error();
-	if (pid == 0)
-		child();
-	// if (waitpid(pid, NULL, 0) == -1)
-	// 	exit_error();
+	return (i);
+}
+/*
+int main(void) 
+{
+    t_list *head;
+    head = ft_lstnew("first node");
+    head->next = ft_lstnew("second node");
+    head->next->next = ft_lstnew("third node");
+
+    printf("The number of nodes in the list is: %d\n", ft_lstsize(head));
+
     return 0;
 }
+*/

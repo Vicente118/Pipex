@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdarras <vdarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 18:26:41 by vdarras           #+#    #+#             */
-/*   Updated: 2024/05/26 00:14:52 by vdarras          ###   ########.fr       */
+/*   Created: 2024/04/02 16:27:23 by vdarras           #+#    #+#             */
+/*   Updated: 2024/04/11 15:02:23 by vdarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "libft.h"
 
-int main(int argc, char **argv, char **envp)
+void	ft_bzero(void *ptr, size_t count)
 {
-	int		fd[2];
-	pid_t	pid;
-	exec("", envp);
-	if (argc != 5)
+	size_t	i;
+
+	i = 0;
+	while (i < count)
 	{
-		write(2, "Error bad number of arguments.\n", 32);
-		return (0);
+		*(unsigned char *)(ptr + i) = 0;
+		i++;
 	}
-	if (pipe(fd) == -1)
-		exit_error();
-	pid = fork();
-	if (pid == -1)
-		exit_error();
-	if (pid == 0)
-		child();
-	// if (waitpid(pid, NULL, 0) == -1)
-	// 	exit_error();
-    return 0;
 }
+/*
+int main(void)
+{	
+	int tab[15];
+	ft_bzero(tab, 15);
+	printf("%d", tab[1]);
+	return (0);
+}
+*/
