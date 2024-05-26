@@ -6,12 +6,11 @@
 /*   By: vdarras <vdarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 12:30:29 by vdarras           #+#    #+#             */
-/*   Updated: 2024/05/26 00:24:38 by vdarras          ###   ########.fr       */
+/*   Updated: 2024/05/26 12:36:47 by vdarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
 void    exit_error(void)
 {
     perror("Error");
@@ -73,7 +72,6 @@ void    exec(char *command, char **envp)
         exit_error();
     }
     if (execve(path_to_command, command_array, envp) == -1)
-        exit_error();
     {
         free(path_to_command);
         free_tab(command_array);

@@ -8,7 +8,7 @@ CFLAGS = -Werror -Wall -Wextra
 
 RM = rm -rf
 
-SRCS = pipex.c utils.c
+SRCS = pipex.c utils.c process.c
 
 OBJS = $(SRCS:.c=.o)
 

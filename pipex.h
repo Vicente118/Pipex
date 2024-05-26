@@ -6,7 +6,7 @@
 /*   By: vdarras <vdarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:25:46 by vdarras           #+#    #+#             */
-/*   Updated: 2024/05/25 23:59:24 by vdarras          ###   ########.fr       */
+/*   Updated: 2024/05/26 12:12:51 by vdarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,10 @@
 # include <time.h>
 # include "libft/libft.h"
 
-typedef struct s_command
-{
-    char    *infile;
-    char    *outfile;
-    char    *cmd1;
-    char    *cmd2;
-}           t_command;
-
 char    *path(char *command, char **envp);
 void    exec(char *command, char **envp);
+void    child(int *fd, char **argv, char **envp);
+void    parent(int *fd, char **argv, char **envp);
 void	free_tab(char **array);
 void    exit_error(void);
 
