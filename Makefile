@@ -8,8 +8,9 @@ CFLAGS = -Werror -Wall -Wextra
 
 RM = rm -rf
 
-SRCS = pipex.c utils.c process.c
-
+SRCS = source/pipex.c source/utils.c source/process.c  source/utils2.c \
+	#    source/get_next_line.c source/get_next_line_utils.c
+	   
 OBJS = $(SRCS:.c=.o)
 
 
@@ -18,6 +19,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	@make bonus -C libft
 	@printf "                                \r"
+	@echo "                                   "
 	@echo "██████╗  ██╗ ██████╗  ███████╗ ██╗  ██╗"
 	@echo "██╔══██╗ ██║ ██╔══██╗ ██╔════╝ ╚██╗██╔╝"
 	@echo "██████╔╝ ██║ ██████╔╝ █████╗    ╚███╔╝ "
@@ -32,9 +34,10 @@ $(NAME) : $(OBJS)
 
 fclean : clean
 	@make fclean -C libft
-	@$(RM) $(NAME)
+	@$(RM) source/$(NAME)
+
 clean : 
 	@make clean -C libft
-	@$(RM) *.o
+	@$(RM) source/*.o
 
 re : fclean all

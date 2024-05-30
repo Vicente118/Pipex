@@ -6,7 +6,7 @@
 /*   By: vdarras <vdarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:25:46 by vdarras           #+#    #+#             */
-/*   Updated: 2024/05/26 12:12:51 by vdarras          ###   ########.fr       */
+/*   Updated: 2024/05/28 17:08:16 by vdarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <string.h>
 # include <errno.h>
 # include <time.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 char    *path(char *command, char **envp);
 void    exec(char *command, char **envp);
