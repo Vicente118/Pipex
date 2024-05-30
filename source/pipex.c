@@ -43,7 +43,7 @@ int main(int argc, char **argv, char **envp)
     i = 0;
 
     if (pipe(fd_pipe[i]) == - 1)  // OUVRE PIPE et execute premiere commande avec infile comme entrée et envoie l'output sur le pipe
-        exit_error;
+        exit_error();
     pid[i] = fork();
     if (pid[i] == 0)
         first_process(fd_pipe[i], argv, envp);
