@@ -60,6 +60,7 @@ int main(int argc, char **argv, char **envp)
         {
             j = -1;
             close_unused_pipes(i, j, argc, fd_pipe);
+            
         }
         i++;
     }
