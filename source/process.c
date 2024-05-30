@@ -41,9 +41,8 @@ char    *path(char *command, char **envp)
     char    *final_path;
     int     i;
 
-    i = 0;
-    while (ft_strncmp(envp[i], "PATH", 4) != 0)
-        i++;
+    i = -1;
+    while (ft_strncmp(envp[++i], "PATH", 4) != 0);
     dir_command = ft_split(*(envp + i) + 5, ':');
     if (!dir_command)
         exit_alloc();

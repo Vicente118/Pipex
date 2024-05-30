@@ -34,7 +34,7 @@ $(NAME) : $(OBJS)
 
 fclean : clean
 	@make fclean -C libft
-	@$(RM) source/$(NAME)
+	@$(RM) $(NAME)
 
 clean : 
 	@make clean -C libft
