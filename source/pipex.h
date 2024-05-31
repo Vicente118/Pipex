@@ -6,7 +6,7 @@
 /*   By: vdarras <vdarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:25:46 by vdarras           #+#    #+#             */
-/*   Updated: 2024/05/30 10:35:21 by vdarras          ###   ########.fr       */
+/*   Updated: 2024/05/30 12:48:00 by vdarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@
 
 char    *path(char *command, char **envp);
 void    exec(char *command, char **envp);
-void    first_process(int *fd, char **argv, char **envp);
-void    final_process(int *fd, int argc, char **argv, char **envp);
+void    first_process(int *pipe, char **argv, char **envp);
+void    process_pipe(int i, int **pipe, char **argv, char **envp);
+void    final_process(int *pipe, int argc, char **argv, char **envp);
 void    close_unused_pipes(int i, int j, int argc, int **fd_pipe);
 void	free_tab(int **array);
 void    free_tab_char(char **array);
@@ -38,3 +39,6 @@ void    exit_error(void);
 void    exit_alloc(void);
 
 #endif
+
+
+// cd command not found
