@@ -2,7 +2,7 @@
 
 void    exit_error(void)
 {
-    perror("Error ");
+    perror("zsh");
 	exit(1);
 }
 
