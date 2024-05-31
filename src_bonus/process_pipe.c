@@ -1,4 +1,4 @@
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 void    process_pipe(int i, int **pipe, char **argv, char **envp)
 {
