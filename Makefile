@@ -22,7 +22,7 @@ SRCS = source/pipex.c source/utils.c source/process.c  source/utils2.c \
 OBJS = $(SRCS:.c=.o)
 
 SRCS_BONUS = src_bonus/pipex_bonus.c src_bonus/utils_bonus.c src_bonus/process_bonus.c  src_bonus/utils2_bonus.c \
-		   # source/get_next_line.c source/get_next_line_utils.c
+			 src_bonus/process_pipe_bonus.c
 
 OBJS_BONUS =$(SRCS_BONUS:.c=.o)
 
