@@ -3,12 +3,16 @@
 void    first_process(int *pipe, char **argv, char **envp)
 {
     int infile;
+    char *error;
 
     close(pipe[0]);
     infile = open(argv[1], O_RDONLY, 0777);
     if (infile == -1)
     {
-        write(2, "zsh: no such file or directory: ", 33);
+        error = strerror(errno);
+        write (2, "zsh: ", 5);
+        write (2, error, ft_strlen(error));
+        write (2, ": ", 2);
         write(2, argv[1], ft_strlen(argv[1]));
         write(2, "\n", 1);
 	    exit(1);
@@ -76,6 +80,7 @@ void    exec(char *command, char **envp)
     command_array= ft_split(command, ' ');
     if (!command_array)
         exit_alloc();
+    check_special_cases(command_array);
     if (access(command, F_OK) != 0)
         path_to_command = path(command_array[0], envp);
     else
@@ -96,4 +101,10 @@ void    exec(char *command, char **envp)
     }
     free(path_to_command);
     free_tab_char(command_array);
+}
+
+void    check_special_cases(char **command_array)
+{
+    if (ft_strncmp(command_array[0], "cd", 2) == 0)
+        exit(1);
 }

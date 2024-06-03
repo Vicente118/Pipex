@@ -41,7 +41,9 @@ $(NAME) : $(OBJS)
 	@echo "\033[0;34m    ██║      ██║ ██║      ███████╗ ██╔╝ ██╗"
 	@echo "\033[0;34m    ╚═╝      ╚═╝ ╚═╝      ╚══════╝ ╚═╝  ╚═╝"
 	@echo "                                    "
+	@rm -rf pipex
 	@$(CC) $(OBJS) $(LIBFT) -o $(NAME)
+
 
 $(NAME_BONUS) : $(OBJS_BONUS)
 	@make bonus -C libft
@@ -54,7 +56,9 @@ $(NAME_BONUS) : $(OBJS_BONUS)
 	@echo "\033[1;33m    ██║      ██║ ██║      ███████╗ ██╔╝ ██╗"
 	@echo "\033[1;33m    ╚═╝      ╚═╝ ╚═╝      ╚══════╝ ╚═╝  ╚═╝"
 	@echo "                                    "
+	@rm -rf pipex
 	@$(CC) $(OBJS_BONUS) $(LIBFT) -o $(NAME_BONUS)
+	@mv $(NAME_BONUS) pipex
 
 %.o : %.c
 	@$(CC) -o $@ -c $< 

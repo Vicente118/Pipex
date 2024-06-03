@@ -6,7 +6,7 @@
 /*   By: vdarras <vdarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:25:46 by vdarras           #+#    #+#             */
-/*   Updated: 2024/05/30 12:48:00 by vdarras          ###   ########.fr       */
+/*   Updated: 2024/06/03 17:26:43 by vdarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int     length_array(int **array);
 int     length_array_char(char **array);
 void    exit_error(void);
 void    exit_alloc(void);
+void    check_special_cases(char **command_array);
 
 #endif
 
